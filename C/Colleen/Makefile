@@ -1,0 +1,24 @@
+NAME = Colleen
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SRCS = Colleen.c
+OBJS = $(SRCS:.c=.o)
+#INCLUDES = -I./includes -I./libft/includes
+#LFT = -L./libft -lft
+RM = rm -f
+
+.c.o:
+	$(CC) $(FLAGS) $(INCLUDES) -o $@ -c $<
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(INCLUDES) -o $(NAME) $^
+
+clean:
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
