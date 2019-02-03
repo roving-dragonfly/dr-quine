@@ -3,8 +3,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = Colleen.c
 OBJS = $(SRCS:.c=.o)
-#INCLUDES = -I./includes -I./libft/includes
-#LFT = -L./libft -lft
 RM = rm -f
 
 .c.o:
