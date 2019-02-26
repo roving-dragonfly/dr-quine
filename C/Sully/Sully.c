@@ -58,9 +58,9 @@ int main(void)
 		"	char bin[128];",
 		"	char command[1024];",
 		"",
-		"	if (SULLY_N <= 0)",
+		"	if (SULLY_N < 0)",
 		"		return (0);",
-		"	sprintf(filename, \"Sully_%d.c\", (SULLY_N - 1));",
+		"	sprintf(filename, \"Sully_%d.c\", (SULLY_N));",
 		"	if (!(file = fopen(filename, \"w\")))",
 		"		return (0);",
 		"	fprintf(file, \"#define SULLY_N %d\\n\", (SULLY_N - 1));",
@@ -76,7 +76,7 @@ int main(void)
 		"	for (; data[i]; i++)",
 		"		fprintf(file, \"%s\\n\", data[i]);",
 		"	fclose(file);",
-		"	sprintf(bin, \"./Sully_%d\", (SULLY_N - 1));",
+		"	sprintf(bin, \"./Sully_%d\", (SULLY_N));",
 		"	sprintf(command, \"clang -Wall -Wextra -Werror %s -o %s && %s\", filename, bin, bin);",
 		"	system(command);",
 		"	return (0);",
@@ -92,9 +92,9 @@ int main(void)
 	char bin[128];
 	char command[1024];
 
-	if (SULLY_N <= 0)
+	if (SULLY_N < 0)
 		return (0);
-	sprintf(filename, "Sully_%d.c", (SULLY_N - 1));
+	sprintf(filename, "Sully_%d.c", (SULLY_N));
 	if (!(file = fopen(filename, "w")))
 		return (0);
 	fprintf(file, "#define SULLY_N %d\n", (SULLY_N - 1));
@@ -110,7 +110,7 @@ int main(void)
 	for (; data[i]; i++)
 		fprintf(file, "%s\n", data[i]);
 	fclose(file);
-	sprintf(bin, "./Sully_%d", (SULLY_N - 1));
+	sprintf(bin, "./Sully_%d", (SULLY_N));
 	sprintf(command, "clang -Wall -Wextra -Werror %s -o %s && %s", filename, bin, bin);
 	system(command);
 	return (0);
