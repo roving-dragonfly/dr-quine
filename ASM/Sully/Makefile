@@ -25,5 +25,6 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(NAME)_*
 
 re: fclean all
