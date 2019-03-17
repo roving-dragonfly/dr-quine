@@ -24,7 +24,6 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
-	$(RM) $(NAME)_*
+	$(RM) $(NAME) $(NAME)_*
 
 re: fclean all
