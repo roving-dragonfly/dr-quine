@@ -9,9 +9,9 @@ $(NAME): $(SRC)
 	$(CLJ) $(SRC)
 
 clean:
-        @echo "No files to clean"
+	$(RM) .cpcache
 
-fclean: 
+fclean: clean
 	$(RM) Sully_*
 
 re: fclean all

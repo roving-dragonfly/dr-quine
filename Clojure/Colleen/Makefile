@@ -1,6 +1,7 @@
 NAME= Colleen
 CLJ= clojure
 SRC= Colleen.clj
+RM= rm -rf
 
 all: $(NAME)
 
@@ -8,9 +9,9 @@ $(NAME): $(SRC)
 	$(CLJ) -m $(NAME)
 
 clean:
-	@echo "No files to clean"
+	$(RM) .cpcache
 
-fclean:
-	@echo "No files to clean"
+fclean: clean
+	@echo "No files to fclean"
 
 re: fclean all
